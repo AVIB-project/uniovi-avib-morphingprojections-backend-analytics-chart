@@ -39,12 +39,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /actuator/health/liveness
-              port: 8081
+              path: /
+              port: 5000
           readinessProbe:
             httpGet:
-              path: /actuator/health/readiness
-              port: 8081
+              path: /
+              port: 5000
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
